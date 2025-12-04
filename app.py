@@ -62,6 +62,8 @@ class SearchEngine:
                 inputs = self.processor(images=image, return_tensors="pt").to(self.device)
                 out = self.model.get_image_features(**inputs)
             else:
+                # Normalize text to lowercase for better matching
+                text = text.lower().strip() if text else ""
                 inputs = self.processor(text=[text], return_tensors="pt", padding="max_length").to(self.device)
                 out = self.model.get_text_features(**inputs)
             

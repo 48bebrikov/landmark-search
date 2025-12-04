@@ -32,7 +32,7 @@ Just create a `docker-compose.yml` file:
 ```yaml
 services:
   landmark:
-    image: 48glock/landmark:0.8
+    image: 48glock/landmark:1.0
     restart: unless-stopped
     ports:
       - "7861:7861"
