@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+.venv
+venv/
+env/
+
+# Data (Large files)
+images/
+images.zip
+embeddings.npy
+*.safetensors
+*.bin
+*.pt
+
+# Logs & OS
+.DS_Store
+thumbs.db
+*.log
+
+# IDE
+.idea/
+.vscode/
+*.swp
+
+# Private keys/secrets
+.env
+secrets.json
+
+# Optional: if you want to ignore the full raw csv
+_dataset_indexed.csv
+

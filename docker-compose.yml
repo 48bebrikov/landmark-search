@@ -1,0 +1,14 @@
+services:
+  landmark:
+    build: .
+    container_name: landmark
+    restart: unless-stopped
+    environment:
+      - PORT=7861
+    ports:
+      - "7861:7861"
+    volumes:
+      # map images and data as read-only to reduce container size
+      - ./images:/app/data/dataset/images:ro
+      - ./embeddings.npy:/app/data/dataset/embeddings.npy:ro
+      - ./dataset_indexed.csv:/app/data/dataset/dataset_indexed.csv:ro
