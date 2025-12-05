@@ -4,7 +4,7 @@
 
 A powerful semantic search engine and image classifier for landmarks, powered by Google's **[SigLIP 2](https://huggingface.co/google/siglip2-so400m-patch14-384)** (Vision Transformer). This tool allows users to search for places using natural language text queries or by uploading an image to find similar locations and identify them.
 
-> **Why SigLIP 2?** Unlike standard CLIP models (which rely on contrastive loss with large batch sizes for stability), SigLIP uses a sigmoid loss function. This makes the model's performance **independent of batch size**, allowing for stable and high-quality embeddings even when processing images one by one or in small batches on limited hardware. It also natively supports multilingual text, including Russian.
+> **Why SigLIP 2?** Unlike standard CLIP models (which are typically limited to lower resolutions and English-centric data), **SigLIP 2** utilizes a shape-optimized architecture with a  **higher native resolution (384x384)** . This allows the model to capture fine-grained details crucial for distinguishing similar landmarks. Furthermore, its training objective (Sigmoid Loss) results in significantly **better zero-shot accuracy** and text-image alignment compared to traditional contrastive models. It also natively supports  **multilingual queries** , enabling seamless search in Russian without translation.
 
 ## Features
 
@@ -15,11 +15,6 @@ A powerful semantic search engine and image classifier for landmarks, powered by
 
   ![1764836644934](image/README/1764836644934.png)
 - **AI Classification:** Automatically identifies the **Top-5 most probable names** and **categories** for any uploaded landmark photo using a voting k-NN approach.
-- **High Performance:**
-
-  - Uses **[SigLIP 2 (So400m)](https://huggingface.co/google/siglip2-so400m-patch14-384)**.
-  - Supports **GPU acceleration** (CUDA) and **CPU optimization** (Dynamic Quantization).
-  - Vector search is performed using optimized matrix operations (NumPy).
 
 ---
 
